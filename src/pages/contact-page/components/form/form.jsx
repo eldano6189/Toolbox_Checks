@@ -21,7 +21,11 @@ const Form = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container__inner}>
-        <form className={styles.form} onSubmit={(e) => submitHandler(e)}>
+        <form
+          className={styles.form}
+          id="contact-form"
+          onSubmit={(e) => submitHandler(e)}
+        >
           <input type="hidden" name="form-name" value="contact" />
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
