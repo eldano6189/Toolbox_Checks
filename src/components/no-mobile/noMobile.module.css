@@ -1,0 +1,33 @@
+.container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: rgb(var(--clr-3));
+  z-index: 100;
+}
+
+.container h1 {
+  color: rgb(var(--clr-2));
+}
+
+.container p {
+  color: rgb(var(--clr-5));
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  .container {
+    display: grid;
+    place-items: center;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 767px) {
+  .container {
+    display: grid;
+    place-items: center;
+  }
+}

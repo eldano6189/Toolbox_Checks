@@ -1,0 +1,70 @@
+.container {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  opacity: 0;
+  animation: fadeIn 0.3s ease 0.5s forwards;
+}
+
+.arrows {
+  display: flex;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  height: 3rem;
+  margin: 1rem 0.5rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: rgb(var(--clr-2));
+  transition: all 0.3s ease;
+}
+
+.arrow > svg path {
+  stroke: rgb(var(--clr-3));
+  transition: all 0.2s ease;
+}
+
+.arrow:hover {
+  background: rgb(var(--clr-1));
+  transform: scale(1.1);
+}
+
+.arrow:hover svg path {
+  stroke: rgb(var(--clr-4));
+}
+
+.arrow svg {
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    left: 0;
+    transform: translate(0);
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    position: relative;
+    margin: 0;
+    overflow: auto;
+  }
+
+  .arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

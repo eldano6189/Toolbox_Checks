@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.dark {
+  --clr-1: 255, 255, 0; /*Bright Yellow*/
+  --clr-2: 200, 200, 0; /*Darker Yellow*/
+  --clr-3: 25, 25, 25; /*Lighter Black*/
+  --clr-4: 15, 15, 15; /*Darker Black*/
+  --clr-5: 205, 205, 205; /*Darker White*/
+  --clr-6: 255, 255, 255; /*Lighter White*/
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  flex: 1 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.2rem;
+}
+
+p,
+li,
+td,
+a,
+input,
+textarea {
+  font-size: 0.8rem;
+}
