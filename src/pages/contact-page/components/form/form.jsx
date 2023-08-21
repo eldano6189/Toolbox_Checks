@@ -8,7 +8,7 @@ const Form = () => {
           className={styles.form}
           name="contact"
           method="post"
-          action="/success"
+          action="/success/"
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className={styles.form__input}>
