@@ -1,0 +1,51 @@
+.container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.container__text {
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+}
+
+.head {
+  padding-bottom: 1rem;
+}
+
+.head h1 {
+  color: rgb(var(--clr-2));
+}
+
+.body {
+  padding-bottom: 1rem;
+}
+
+.body h2 {
+  color: rgb(var(--clr-5));
+}
+
+.foot {
+  margin-top: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  padding: 0.75em 1.25em;
+  border: 1px solid transparent;
+  outline: none;
+  background: linear-gradient(to right, rgb(var(--clr-2)), rgb(var(--clr-1)));
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: transparent;
+  border: 1px solid rgb(var(--clr-1));
+  color: rgb(var(--clr-6));
+}
