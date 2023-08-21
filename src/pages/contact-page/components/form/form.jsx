@@ -31,7 +31,9 @@ const Form = () => {
             </div>
           </div>
           <div className={styles.form__input}>
-            <button className={styles.button}>Send</button>
+            <button className={styles.button} type="submit">
+              Send
+            </button>
           </div>
         </form>
       </div>
