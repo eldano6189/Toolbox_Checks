@@ -5,7 +5,7 @@ const Form = () => {
     <div className={styles.container}>
       <div className={styles.container__inner}>
         <form className={styles.form} name="contact" method="post">
-          <input type="hidden" name="contact" value="contact" />
+          <input type="hidden" name="form-name" value="contact" />
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Email*</p>
