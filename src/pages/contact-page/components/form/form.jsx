@@ -1,14 +1,19 @@
 import styles from "./form.module.css";
-
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   let navigate = useNavigate();
+  const [form, setForm] = useState({
+    email: "",
+    name: "",
+    subject: "",
+    message: "",
+  });
 
   const submitHandler = (e) => {
     e.preventDefault();
-    let myForm = document.getElementById("contact-form");
-    let formData = new FormData(myForm);
+    let formData = new FormData(form);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -16,6 +21,14 @@ const Form = () => {
     })
       .then(() => navigate("/success"))
       .catch((error) => alert(error));
+  };
+
+  const changeHandler = (e) => {
+    const value = e.target.value;
+    setForm({
+      ...form,
+      [e.target.name]: value,
+    });
   };
 
   return (
@@ -30,25 +43,43 @@ const Form = () => {
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Email*</p>
-              <input required type="email" name="email" />
+              <input
+                required
+                type="email"
+                name="email"
+                onChange={(e) => changeHandler(e)}
+              />
             </div>
           </div>
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Name</p>
-              <input type="text" name="name" />
+              <input
+                type="text"
+                name="name"
+                onChange={(e) => changeHandler(e)}
+              />
             </div>
           </div>
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Subject*</p>
-              <input required type="text" name="subject" />
+              <input
+                required
+                type="text"
+                name="subject"
+                onChange={(e) => changeHandler(e)}
+              />
             </div>
           </div>
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Message*</p>
-              <textarea required name="message" />
+              <textarea
+                required
+                name="message"
+                onChange={(e) => changeHandler(e)}
+              />
             </div>
           </div>
           <div className={styles.form__input}>
