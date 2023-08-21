@@ -9,25 +9,25 @@ const Form = () => {
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Email*</p>
-              <input required type="email" />
+              <input required type="email" name="email" />
             </div>
           </div>
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Name</p>
-              <input type="text" />
+              <input type="text" name="name" />
             </div>
           </div>
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Subject*</p>
-              <input required type="text" />
+              <input required type="text" name="subject" />
             </div>
           </div>
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
               <p>Message*</p>
-              <textarea required />
+              <textarea required name="message" />
             </div>
           </div>
           <div className={styles.form__input}>
