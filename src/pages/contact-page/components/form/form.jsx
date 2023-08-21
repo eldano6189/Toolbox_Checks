@@ -1,15 +1,27 @@
 import styles from "./form.module.css";
 
+import { useNavigate } from "react-router-dom";
+
 const Form = () => {
+  let navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    let myForm = document.getElementById("contact-form");
+    let formData = new FormData(myForm);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => navigate("/success"))
+      .catch((error) => alert(error));
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.container__inner}>
-        <form
-          className={styles.form}
-          name="contact"
-          method="post"
-          action="/success/"
-        >
+        <form className={styles.form} onSubmit={(e) => submitHandler(e)}>
           <input type="hidden" name="form-name" value="contact" />
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
