@@ -11,13 +11,20 @@ const Form = () => {
     message: "",
   });
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    let formData = new FormData(form);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: encode({ "form-name": "contact", ...form }),
     })
       .then(() => navigate("/success"))
       .catch((error) => alert(error));
