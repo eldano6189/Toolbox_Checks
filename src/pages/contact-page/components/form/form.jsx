@@ -4,7 +4,7 @@ const Form = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container__inner}>
-        <form className={styles.form}>
+        <form className={styles.form} name="contact" method="post">
           <input type="hidden" name="contact" value="contact" />
           <div className={styles.form__input}>
             <div className={styles.wrapper__input}>
